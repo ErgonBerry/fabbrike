@@ -1,0 +1,17 @@
+{
+  "name": "fabbrike",
+  "version": "1.0.0",
+  "description": "Site principal da Fabbrike",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "@chakra-ui/react": "^2.0.0",
+    "react": "^18.0.0",          
+    "react-dom": "^18.0.0"       
+  },
+  "author": "",
+  "license": "ISC"
+}
