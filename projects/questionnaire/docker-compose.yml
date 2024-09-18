@@ -5,9 +5,6 @@ services:
   mongodb:
     image: mongo:latest
     container_name: mongodb
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
       - "27017:27017"
     volumes:
@@ -20,8 +17,8 @@ services:
       dockerfile: Dockerfile
     container_name: node_app
     environment:
-      NODE_ENV: development
-      MONGO_URI: mongodb://root:example@mongodb:27017/mydatabase?authSource=admin
+      - MONGO_URI=${MONGO_URI}
+      - NODE_ENV=${NODE_ENV}
     ports:
       - "3000:3000"
     volumes:
