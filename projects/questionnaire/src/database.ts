@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 // Carregar as variáveis de ambiente
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI || '';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/questionnaire';
 
 export const connectDB = async () => {
   try {

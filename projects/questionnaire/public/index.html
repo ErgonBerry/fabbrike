@@ -1,19 +1,128 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node.js App</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Pesquisa de Ideias para Aplicativos Mobile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .question textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            font-size: 1em;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Welcome to Your Node.js Application</h1>
-        <p>This is a basic static HTML page served from the Express app.</p>
-        <img src="/images/logo.png" alt="Logo" width="150">
+        <h1>Pesquisa de Ideias para Aplicativos Mobile</h1>
+        <form action="/questionnaire/submit" method="POST">
+            <div class="question">
+                <label for="q1">1. Qual tarefa ou atividade do seu dia a dia você gostaria que fosse mais fácil ou automática com a ajuda de um aplicativo?</label>
+                <p>Pense em algo que gostaria de simplificar em sua rotina.</p>
+                <textarea id="q1" name="q1" placeholder="Exemplos: organizar suas finanças, lembrar de beber água, agendar compromissos automaticamente, encontrar cuidadores de pets (pet sitter), monitorar o status de entregas, ou organizar caronas entre vizinhos." rows="4" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="q2">2. Como você imagina que esse aplicativo poderia te ajudar de forma prática?</label>
+                <p>Descreva como o app funcionaria no seu dia a dia, de forma mais específica.</p>
+                <textarea id="q2" name="q2" placeholder="Exemplos: o app enviaria lembretes automáticos, faria cálculos de gastos diários, mostraria a localização de entregas em tempo real, conectaria donos de pets com cuidadores locais disponíveis, ou permitiria agendar caronas para pessoas do bairro, mostrando os horários disponíveis." rows="4" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="q3">3. Se você pudesse definir três recursos principais para esse aplicativo, quais seriam?</label>
+                <p>Defina funcionalidades-chave que tornariam o aplicativo útil.</p>
+                <textarea id="q3" name="q3" placeholder="Exemplos: notificações personalizadas, integração com calendário, rastreamento de tempo, sistema de avaliação para pet sitters, mapas com rastreamento de entregas em tempo real, ou um chat para coordenar caronas com segurança." rows="4" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="q4">4. Se você pudesse escolher um nome para o aplicativo que refletisse o que ele faz, qual seria?</label>
+                <p>Pense em um nome que represente a essência do app.</p>
+                <textarea id="q4" name="q4" placeholder="Exemplos: 'Finanças Fácil', 'Agenda Smart', 'RastreaJá', 'Pet Cuida', 'Caronas do Bairro', 'Entrega Segura'." rows="2" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="q5">5. Que tipo de situação ou momento você acha que as pessoas mais usariam esse aplicativo?</label>
+                <p>Imagine como o aplicativo se encaixaria na vida das outras pessoas, explorando quando e como ele seria utilizado.</p>
+                <textarea id="q5" name="q5" placeholder="Exemplos: no trabalho para gerenciar tarefas, ao viajar para organizar roteiros, no dia a dia para monitorar hábitos, quando precisar contratar um pet sitter para viagens de última hora, acompanhar entregas importantes com rastreio em tempo real, ou combinar caronas rápidas com vizinhos para reduzir o trânsito." rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-    <script src="/js/main.js"></script>
+
 </body>
 </html>
-

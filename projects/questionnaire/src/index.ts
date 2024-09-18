@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import path from 'path';
 import { connectDB } from './database';
-import routes from './routes';
+import questionnaireRoutes from './routes/questionnaire.routes';
 
 // Inicializando o dotenv
 dotenv.config();
@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
+// Rotas
+app.use('/questionnaire', questionnaireRoutes);
 
 // Iniciar o servidor
 app.listen(PORT, () => {
