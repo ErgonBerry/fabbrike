@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  # Serviço do MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  # Serviço da aplicação Node.js
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_app
+    environment:
+      NODE_ENV: development
+      MONGO_URI: mongodb://root:example@mongodb:27017/mydatabase?authSource=admin
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+    command: "npx nodemon src/index.ts"
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongo_data:
+

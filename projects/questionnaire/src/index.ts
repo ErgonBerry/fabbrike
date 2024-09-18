@@ -21,8 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Servir arquivos estáticos da pasta public
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Configurar rotas
-app.use('/', routes);
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 // Iniciar o servidor
 app.listen(PORT, () => {

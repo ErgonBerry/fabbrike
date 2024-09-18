@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
+// Carregar as variáveis de ambiente
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI || '';
@@ -14,4 +15,3 @@ export const connectDB = async () => {
     process.exit(1);
   }
 };
-
