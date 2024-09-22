@@ -14,10 +14,10 @@ RUN go mod download
 COPY . .
 
 # Compilar o código Go
-RUN go build -o app ./cmd/app
+RUN go build -o ./out ./cmd/app
 
 # Expor a porta 8000
 EXPOSE 8000
 
 # Comando para rodar o binário
-CMD ["./app"]
+CMD ["./out"]
