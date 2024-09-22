@@ -1,0 +1,12 @@
+[build]
+# Define o diretório de trabalho onde o build será executado
+workdir = "projects/my-go-app"
+# Comando de build, pode ser 'go build' ou similar
+command = "go build"
+
+[start]
+# Define o diretório de trabalho onde o start será executado
+workdir = "projects/my-go-app"
+# Comando de start, como 'go run' ou execução do binário
+command = "./app"
+
