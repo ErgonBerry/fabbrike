@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import path from 'path';
 import { connectDB } from './database';
-import questionnaireRoutes from './routes/questionnaire.routes';
+//import questionnaireRoutes from './routes/questionnaire.routes';
+import Router from './routes/questionnaire.routes';
 
 // Inicializando o dotenv
 dotenv.config();
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 // Rotas
-app.use('/questionnaire', questionnaireRoutes);
+app.use('/questionnaire', Router);
 
 // Iniciar o servidor
 app.listen(PORT, () => {
